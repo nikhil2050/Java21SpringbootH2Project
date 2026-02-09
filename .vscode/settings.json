@@ -1,0 +1,15 @@
+{
+    "kiroAgent.configureMCP": "Disabled",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "/Users/nk/Library/Java/JavaVirtualMachines/jdk-21.0.6.jdk/Contents/Home",
+            "default": true
+        }
+    ],
+    "java.jdt.ls.java.home": "/Users/nk/Library/Java/JavaVirtualMachines/jdk-21.0.6.jdk/Contents/Home",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "maven.executable.path": "/opt/homebrew/Cellar/maven/3.9.9/libexec",
+    "java.debug.settings.onBuildFailureProceed": true
+}

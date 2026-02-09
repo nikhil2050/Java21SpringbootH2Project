@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MainClassJava21",
+            "request": "launch",
+            "mainClass": "com.javalearn.Java21_Features",
+            "projectName": "Java21Project"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "RunnerApplication",
+            "request": "launch",
+            "mainClass": "com.directory.RunnerApplication",
+            "projectName": "Java21Project"
+        },
+        {
+            "type": "java",
+            "name": "Java8_Streams",
+            "request": "launch",
+            "mainClass": "com.javalearn.Java8_Streams",
+            "projectName": "Java21Project"
+        }
+    ]
+}
