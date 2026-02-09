@@ -41,7 +41,9 @@ public class Java17_Features {
 		System.out.println("  Rectangle volume: " + getVolume(rectangle));
 
 	}
-	
+
+	//noinspection PatternVariableCanBeUsed
+	@SuppressWarnings("PatternVariableCanBeUsed")
 	static double getArea(Shape shape) {
 		if (shape instanceof Circle c) {
 			return Math.PI * c.radius() * c.radius();
