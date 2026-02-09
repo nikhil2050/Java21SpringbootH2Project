@@ -36,6 +36,10 @@ public class Java17_Features {
 		
 		System.out.println("  Circle area: " + getArea(circle));
 		System.out.println("  Rectangle area: " + getArea(rectangle));
+
+		System.out.println("  Circle volume: " + getVolume(circle));
+		System.out.println("  Rectangle volume: " + getVolume(rectangle));
+
 	}
 	
 	static double getArea(Shape shape) {
@@ -46,7 +50,15 @@ public class Java17_Features {
 		}
 		return 0;
 	}
-	
+	static double getVolume(Shape shape) {
+		if (shape instanceof Circle(double radius)) {							// Can be replaced with record pattern
+			return Math.PI * radius * radius * radius;
+		} else if (shape instanceof Rectangle(double width, double height)) {	// Can be replaced with record pattern
+			return width * height * height;
+		}
+		return 0;
+	}
+
 	// Sealed interface (Java 17)
 	sealed interface Shape permits Circle, Rectangle {}
 	
