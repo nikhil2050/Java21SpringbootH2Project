@@ -15,7 +15,10 @@ public class Java17_Features {
 		howMany(1);
 		howMany(2);
 		howMany(67);
-		
+
+		// Test 2b: Switch expressions (Java 14+, available in Java 17)
+		String result = howMuch(1);
+
 		// Test 3: Sealed classes demo (Java 17)
 		demonstrateSealedClasses();
 	}
@@ -26,8 +29,35 @@ public class Java17_Features {
 	        case 2  -> System.out.println("  " + k + " -> two");
 	        default -> System.out.println("  " + k + " -> many");
 	    }
+	}	
+
+	static String howMuch(int k) {
+	    String result = switch (k) {
+	        case 1  -> {
+				System.out.println("\n  " + k + " -> one");
+				yield "one";
+			}
+	        case 2  -> {
+				System.out.println("\n  " + k + " -> two");
+				yield "two";
+			}
+	        default  -> {
+				System.out.println("\n  " + k + " -> many");
+				yield "many";
+			}
+	    };
+		return result;
 	}
 	
+	// ------------------------------------------------------------------------------------------
+
+	// Sealed interface (Java 17)
+	sealed interface Shape permits Circle, Rectangle {}
+	
+	record Circle(double radius) implements Shape {}
+	record Rectangle(double width, double height) implements Shape {}
+	// record Triangle(double base, double height) implements Shape {} // Not permitted, will cause compile error
+
 	// Sealed classes (Java 17)
 	static void demonstrateSealedClasses() {
 		System.out.println("\nSealed Classes Demo:");
@@ -61,9 +91,4 @@ public class Java17_Features {
 		return 0;
 	}
 
-	// Sealed interface (Java 17)
-	sealed interface Shape permits Circle, Rectangle {}
-	
-	record Circle(double radius) implements Shape {}
-	record Rectangle(double width, double height) implements Shape {}
 }
